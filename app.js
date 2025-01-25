@@ -11,6 +11,7 @@ if (nombre.trim() !== ""){
 
  //limpia el campo
     document.getElementById("amigo").value="";
+    actualizaAmigos(amigos);
 
 //ver el arreglo con los nuevos nombres
     console.log("amigos",amigos);
@@ -19,5 +20,13 @@ if (nombre.trim() !== ""){
     alert("Por favor, ingrese un nombre válido.")
 }
 }
-agregarAmigo();
+function actualizaAmigos(amigos){
+    const lista= document.getElementById('listaAmigos');
+    lista.innerHTML='';
+amigos.forEach(amigo=> {
+    const li = document.createElement('li');
+    li.textContent = amigo;
+    lista.appendChild(li);
 
+});
+}
